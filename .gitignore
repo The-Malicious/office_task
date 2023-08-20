@@ -1,0 +1,6 @@
+.env
+.htacess
+node_modules
+package-lock.json
+yarn.lock
+host.js

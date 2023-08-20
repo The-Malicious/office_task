@@ -1,0 +1,45 @@
+const tag = require("../repository/tagRepo");
+
+exports.list = async (req, res) => {
+  tag
+    .list(req.body)
+    .then((response) => {
+      return res.send({ status: 201, message: "fetched", data: response });
+    })
+    .catch((err) => {
+      return res.send({ status: 500, message: err.message });
+    });
+};
+
+exports.add = async (req, res) => {
+  tag
+    .add(req.body)
+    .then((response) => {
+      return res.send({ status: 201, message: "added", data: response });
+    })
+    .catch((err) => {
+      return res.send({ status: 500, message: err.message });
+    });
+};
+
+exports.delete = async (req, res) => {
+  tag
+    .delete(req.body)
+    .then((response) => {
+      return res.send({ status: 201, message: "deleted", data: response });
+    })
+    .catch((err) => {
+      return res.send({ status: 500, message: err.message });
+    });
+};
+
+exports.update = async (req, res) => {
+  tag
+    .update(req.body)
+    .then((response) => {
+      return res.send({ status: 201, message: "update", data: response });
+    })
+    .catch((err) => {
+      return res.send({ status: 500, message: err.message });
+    });
+};
