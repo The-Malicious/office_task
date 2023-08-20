@@ -18,13 +18,13 @@ exports.add = (params) => {
       const newData = await new product(params);
       const data = newData.save();
 
-      if (data) {
-        const recentData = await product.aggregate([
-          { $sort: { created_at: -1 } },
-        ]);
-        console.log(recentData);
-        resolve(recentData);
-      }
+      // if (data) {
+      //   const recentData = await product.aggregate([
+      //     { $sort: { created_at: -1 } },
+      //   ]);
+      //   console.log(recentData);
+      // }
+      resolve(data);
     } catch (error) {
       reject(error);
     }
